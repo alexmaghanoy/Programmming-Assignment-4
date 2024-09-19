@@ -182,7 +182,7 @@ By using data wrangling and data visualization techniques with storytelling, ana
 
  
  #### PART 2: VISUALIZATION
- *Create a visualization that shows the correlation between students' grades in Math and Electronics and how their average grade affects them.
+ *Create a visualization that shows the correlation between students' grades in Math and Electronics and how their average grade affects them.*
 
  In this problem, we can use **Scatterplot** to visualize these data.
 
@@ -199,15 +199,10 @@ By using data wrangling and data visualization techniques with storytelling, ana
 
 ![image](https://github.com/user-attachments/assets/7d6576fa-7690-4fce-bf5b-ec60f46c913f)
 
+## CONCLUSION
 
+In this programming assignment, the analysis of the provided dataset demonstrates the effectiveness of data wrangling and visualization techniques in uncovering insights from complex data. By creating targeted data frames and visualizations, patterns or relationships were revealed, such as the impact of academic track, gender, and hometown on average grades. This process underscores the value of data-driven approaches in understanding performance trends and making informed decisions based on the dataset's findings.
 
-## VERSION HISTORY
-**September 19, 2024**
-
-- [as of 11:50 PM] = *reuploaded the updated jupyter nb{***w/:*** markdowns and more structured codes}; building readme file {***w/:*** already created sample test runs and code proper}*
-- [as of 4:45 PM] = *uploaded raw jupyter nb {***w/o:*** markdowns yet, will be reuploaded}; building readme file {***w/:*** objectives and overview of the problems given; ***w/o:*** code proper and sample test runs yet}* 
-- [as of 10:03 AM] = *created 'Programming-Assignment-4' repository ~ {initial upload}*
-
-
-`Submitted by: Alesandra Joyce P. Maghanoy`
+## AUTHOR
+`Alesandra Joyce P. Maghanoy`
 
