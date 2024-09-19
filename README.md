@@ -3,9 +3,9 @@
 
 
 ## OBJECTIVES
-1. Learn how to filter and manipulate data to specific data frames.
-2. Understand how to apply condition-based filtering to dataset columns.
-3. Create proper visualization of data frames using Matlplotlib and Seaborn.
+- Learn how to filter and manipulate data to specific data frames.
+- Understand how to apply condition-based filtering to dataset columns.
+- Create proper visualization of data frames using Matlplotlib and Seaborn.
 
 
 ## PROBLEM OVERVIEW
@@ -53,7 +53,7 @@ constant as Mindanao and gender Female
 ## PART 2 - VISUALIZATION OF DATA
 
 **OBJECTIVE:**
-- Create visualizations using MatplotLib and Seaborn to show how the different features in the dataset contribute to student's average grades.
+- Create visualizations using MatplotLib and Seaborn to show how the different features in the dataset contribute to students' average grades.
 
 
 **TASK:**
@@ -73,22 +73,22 @@ constant as Mindanao and gender Female
 `- provides a clear, straightforward way to visualize differences and make comparisons between different sets of data.`
 
   #### Gender
-      plt.figure(figsize=(4,4))  #set the size of the grid
-      plt.title("Average Grade Distribution by Gender")
-      sns.barplot(x="Gender", y="Average", data=df)
-      plt.show()
+      plt.figure(figsize=(4,4))                                      #sets the size of the grid
+      plt.title("Average Grade Distribution by Gender")              #creates a title for the graph
+      sns.barplot(x="Gender", y="Average", data=df)                  #syntax to create a bar graph
+      plt.show()                                                     #print
 
    #### Hometown
-      plt.figure(figsize=(4,4))
-      plt.title("Average Grade Distribution by Hometown")
-      sns.barplot(x="Hometown", y="Average", data=df)
-      plt.show()
+      plt.figure(figsize=(4,4))                                      #sets the size of the grid
+      plt.title("Average Grade Distribution by Hometown")            #creates a title for the graph
+      sns.barplot(x="Hometown", y="Average", data=df)                #syntax to create a bar graph
+      plt.show()                                                     #print
 
    #### Track
-      plt.figure(figsize=(4,4))
-      plt.title("Average Grade Distribution by Track")
-      sns.barplot(x="Track", y="Average", data=df)
-      plt.show()
+      plt.figure(figsize=(4,4))                                      #sets the size of the grid
+      plt.title("Average Grade Distribution by Track")               #creates a title for the graph
+      sns.barplot(x="Track", y="Average", data=df)                   #syntax to create a bar graph
+      plt.show()                                                     #print
 
 
 **SAMPLE TEST RUNS:**
@@ -145,6 +145,7 @@ constant as Mindanao and gender Female
 ## VERSION HISTORY
 **September 19, 2024** - Initial Upload (on-going) 
 
+- [as of 11:50 PM]
 - [as of 4:45 PM] = *uploaded raw jupyter nb code {***w/o*** markdowns yet, will be reuploaded}, building readme file {***w/*** objectives and overview of the problems given; ***w/o*** code proper and sample test runs yet}* 
 - [as of 10:03 AM] = *created 'Programming-Assignment-4' repository*
 
