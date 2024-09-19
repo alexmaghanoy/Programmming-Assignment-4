@@ -1,6 +1,4 @@
 # Programmming-Assignment-4
-**Submitted by:** Alesandra Joyce P. Maghanoy
-
 
 ## OBJECTIVES
 - Learn how to filter and manipulate data to specific data frames.
@@ -25,30 +23,33 @@ By using data wrangling and data visualization techniques with storytelling, ana
 **TASK:**
 
 *Create the following data frames:*
-- Instru = [“Name”, “GEAS”, “Electronics >70”]; where the track is constant as 
-Instrumentation and hometown Luzon
-- Mindy = [ “Name”, “Track”, “Electronics”, “Average >=55”]; where hometown is 
-constant as Mindanao and gender Female
+- `Instru = [“Name”, “GEAS”, “Electronics >70”]; where the track is constant as Instrumentation and hometown Luzon`
+- `Mindy = [ “Name”, “Track”, “Electronics”, “Average >=55”]; where hometown is constant as Mindanao and gender Female`
 
 **CODE PROPER:**
 
-      df = pd.read_excel('board2.xlsx')
-      df
+      # import data set
+      df = pd.read_excel('board2.xlsx')            
+      df                                          
 
-      Instru = df[(df['Track'] == 'Instrumentation') & 
-            (df['Hometown'] == 'Luzon') & 
-            (df['Electronics'] > 70)][['Name', 'GEAS', 'Electronics']]`
+      # Filter the data by these conditions, where: the Track must be Instrumentation; the Hometown is Luzon
+      # The grade in Electronics must also be greater than 70
+      Instru = df[(df['Track'] == 'Instrumentation') &                                                                                  
+              (df['Hometown'] == 'Luzon') &                                            
+              (df['Electronics'] > 70)][['Name', 'GEAS', 'Electronics']]`
       Instru
 
+      #this will compute the average grade of each student and create another column for the result
       df['Average']=df[['Math', 'Electronics', 'GEAS', 'Communication']].mean(axis=1)`
       df
 
+      # Filter the data by these conditions, where: the Gender must be Female; the Hometown is Mindanao
+      # The average grade must also be greater than or equal to 55.
       Mindy = df[(df['Gender'] == 'Female') & 
             (df['Hometown'] == 'Mindanao') & 
             (df['Average'] >= 55)][['Name', 'Track', 'Electronics', 'Average']]`
       Mindy
 
-**SAMPLE TEST RUNS:**
 
 ## PART 2 - VISUALIZATION OF DATA
 
@@ -90,8 +91,8 @@ constant as Mindanao and gender Female
       sns.barplot(x="Track", y="Average", data=df)                   #syntax to create a bar graph
       plt.show()                                                     #print
 
+### OTHER VISUALS
 
-**SAMPLE TEST RUNS:**
 - For **Boxplot**
 
 `- shows the distribution of grades for each group (track, gender, hometown) and highlights the median, quartiles, and potential outliers.`
@@ -113,7 +114,6 @@ constant as Mindanao and gender Female
       sns.boxplot(x= "Track", y= "Average", data=df)
       plt.title("Average Grade Distribution by Track")
       plt.show()
-
 
 - For **Histogram**
 
@@ -142,10 +142,73 @@ constant as Mindanao and gender Female
       plt.show()
 
 
-## VERSION HISTORY
-**September 19, 2024** - Initial Upload (on-going) 
+## SAMPLE TEST RUN
 
-- [as of 11:50 PM]
-- [as of 4:45 PM] = *uploaded raw jupyter nb code {***w/o*** markdowns yet, will be reuploaded}, building readme file {***w/*** objectives and overview of the problems given; ***w/o*** code proper and sample test runs yet}* 
-- [as of 10:03 AM] = *created 'Programming-Assignment-4' repository*
+*Create the following data frames using the same dataset above:*
+
+`Sample = [“Name”, “Track”, “Math”, “Electronics”, “Average > 60"]; where Track is either Microelectronics or Instrumentation, Electronics < Math, and select only the even-numbered rows.`
+
+
+#### PART 1: DATA FRAME
+
+*Code Proper:*
+
+      #slicing the dataframe in even-numbered rows (for every second row)
+      new_df = df.iloc[0:30:2] 
+
+      sample = new_df[((new_df["Track"] == "Microelectronics") | (new_df["Track"] == "Instrumentation"))  
+      #track must be either **microelectronics** or **instrumentation**
+        
+        &((new_df["Electronics"]) < (new_df["Math"]))   
+        #their grade in **math** is greater than their grade in **electronics**
+        
+        &(new_df["Average"] > 60)][["Name", "Track", "Math", "Electronics", "Average"]]   
+        #their average grade must be greater than 60; #the specified columns selected and returned to the new data frame
+            
+      #print the output
+      sample
+
+*Expected Output:*
+
+|      | Name  |       Track       | Math | Electronics | Average |
+|:----:|:-----:|:-----------------:|:----:|:-----------:|:-------:|
+| 2    | S3    | Instrumentation   | 83   |     74      | 72.75   |
+| 12   | S13   | Microelectronics  | 88   |     35      | 62.25   |
+| 16   | S17   | Microelectronics  | 81   |     79      | 70.50   |
+| 18   | S19   | Microelectronics  | 79   |     63      | 73.00   |
+| 20   | S21   | Instrumentation   | 83   |     51      | 68.50   |
+| 22   | S23   | Instrumentation   | 84   |     70      | 68.75   |
+| 26   | S27   | Microelectronics  | 70   |     47      | 60.75   |
+| 28   | S29   | Instrumentation   | 73   |     48      | 63.50   |
+
+ 
+ #### PART 2: VISUALIZATION
+ *Create a visualization that shows the correlation between students' grades in Math and Electronics and how their average grade affects them.
+
+ In this problem, we can use **Scatterplot** to visualize these data.
+
+ *Code Proper:*
+ 
+      plt.figure(figsize=(6, 4))
+      sns.scatterplot(data=sample, x='Math', y='Electronics', hue='Average', s=80)
+      plt.title('Math and Electronics Grades with Average Score Indicators')
+      plt.xlabel('Math')
+      plt.ylabel('Electronics')
+      plt.show()
+      
+*Expected Output:*
+
+![image](https://github.com/user-attachments/assets/7d6576fa-7690-4fce-bf5b-ec60f46c913f)
+
+
+
+## VERSION HISTORY
+**September 19, 2024**
+
+- [as of 11:50 PM] = *reuploaded the updated jupyter nb{***w/:*** markdowns and more structured codes}; building readme file {***w/:*** already created sample test runs and code proper}*
+- [as of 4:45 PM] = *uploaded raw jupyter nb {***w/o:*** markdowns yet, will be reuploaded}; building readme file {***w/:*** objectives and overview of the problems given; ***w/o:*** code proper and sample test runs yet}* 
+- [as of 10:03 AM] = *created 'Programming-Assignment-4' repository ~ {initial upload}*
+
+
+`Submitted by: Alesandra Joyce P. Maghanoy`
 
