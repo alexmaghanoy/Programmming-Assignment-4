@@ -1,5 +1,5 @@
 # Programmming-Assignment-4
-Submitted by: Alesandra Joyce P. Maghanoy
+**Submitted by:** Alesandra Joyce P. Maghanoy
 
 
 ## OBJECTIVES
@@ -10,7 +10,9 @@ Submitted by: Alesandra Joyce P. Maghanoy
 
 ## PROBLEM OVERVIEW
 
-Download the provided ECE Board Exam 2 dataset. By using data wrangling and data visualization techniques with storytelling, analyze the data, and present different: 
+Download the provided ECE Board Exam 2 dataset. 
+
+By using data wrangling and data visualization techniques with storytelling, analyze the data and present different: 
 - **Data Frames**
 - **Visuals**
 
