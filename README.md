@@ -17,12 +17,12 @@ By using data wrangling and data visualization techniques with storytelling, ana
 - **Visuals**
 
 
-## PROBLEM 1
+## PART 1 - DATA FRAMES
 
-**OBJECTIVES**
+**OBJECTIVE:**
 - Create a filtered data frames based on specific conditions and columns using data wrangling techniques.
 
-**TASK**
+**TASK:**
 
 *Create the following data frames:*
 - Instru = [“Name”, “GEAS”, “Electronics >70”]; where the track is constant as 
@@ -30,27 +30,116 @@ Instrumentation and hometown Luzon
 - Mindy = [ “Name”, “Track”, “Electronics”, “Average >=55”]; where hometown is 
 constant as Mindanao and gender Female
 
-**CODE PROPER**
+**CODE PROPER:**
 
-**SAMPLE TEST RUNS**
+      df = pd.read_excel('board2.xlsx')
+      df
 
-## PROBLEM 2
+      Instru = df[(df['Track'] == 'Instrumentation') & 
+            (df['Hometown'] == 'Luzon') & 
+            (df['Electronics'] > 70)][['Name', 'GEAS', 'Electronics']]`
+      Instru
 
-**OBJECTIVES**
+      df['Average']=df[['Math', 'Electronics', 'GEAS', 'Communication']].mean(axis=1)`
+      df
+
+      Mindy = df[(df['Gender'] == 'Female') & 
+            (df['Hometown'] == 'Mindanao') & 
+            (df['Average'] >= 55)][['Name', 'Track', 'Electronics', 'Average']]`
+      Mindy
+
+**SAMPLE TEST RUNS:**
+
+## PART 2 - VISUALIZATION OF DATA
+
+**OBJECTIVE:**
 - Create visualizations using MatplotLib and Seaborn to show how the different features in the dataset contribute to student's average grades.
 
 
-**TASK**
+**TASK:**
 
-*Generate visualizations that will answer and prove the following:*
-1. Does the chosen track in college influence a student's average grade?
-2. Does gender impact a student's performance on their average grade?
-3. Is there any significant  correlation between a student's hometown and the average grade?
-   
-**CODE PROPER**
+*Generate visualizations that will answer and prove if:*
+- The chosen track in college, gender, or hometown contributes to a higher average score.
 
-**SAMPLE TEST RUNS**
+**NOTES:**
+- Use a **vertical bar graph** to compare average grades across different categories (e.g., tracks, gender, hometowns).
+- Optionally, include additional visualizations like **boxplots** to show the distribution of data within each category or
+**histogram** to see the distribution of data within each category.
+  
+**CODE PROPER:**
 
+- For **Vertical Bar Graph**
+
+`- provides a clear, straightforward way to visualize differences and make comparisons between different sets of data.`
+
+  #### Gender
+      plt.figure(figsize=(4,4))  #set the size of the grid
+      plt.title("Average Grade Distribution by Gender")
+      sns.barplot(x="Gender", y="Average", data=df)
+      plt.show()
+
+   #### Hometown
+      plt.figure(figsize=(4,4))
+      plt.title("Average Grade Distribution by Hometown")
+      sns.barplot(x="Hometown", y="Average", data=df)
+      plt.show()
+
+   #### Track
+      plt.figure(figsize=(4,4))
+      plt.title("Average Grade Distribution by Track")
+      sns.barplot(x="Track", y="Average", data=df)
+      plt.show()
+
+
+**SAMPLE TEST RUNS:**
+- For **Boxplot**
+
+`- shows the distribution of grades for each group (track, gender, hometown) and highlights the median, quartiles, and potential outliers.`
+
+   #### Gender
+      plt.figure(figsize=(5,3))
+      sns.boxplot(x= "Gender", y= "Average", data=df)
+      plt.title("Average Grade Distribution by Gender")
+      plt.show()
+
+   #### Hometown
+      plt.figure(figsize=(5,3))
+      sns.boxplot(x= "Hometown", y= "Average", data=df)
+      plt.title("Average Grade Distribution by Hometown")
+      plt.show()
+  
+   #### Track
+      plt.figure(figsize=(5,3))
+      sns.boxplot(x= "Track", y= "Average", data=df)
+      plt.title("Average Grade Distribution by Track")
+      plt.show()
+
+
+- For **Histogram**
+
+`- best for visualizing the frequency distribution of a single numeric variable and seeing the overall shape of the grade distribution for each group. `
+
+   #### Create the figure
+      plt.figure(figsize=(12,10))
+  
+   #### Gender
+      plt.subplot(2,2,1)
+      sns.histplot(df, x = "Average", hue = "Gender", multiple = "stack")
+      plt.title("Average Grade Distribution by Gender")
+      
+   #### Hometown
+      plt.subplot(2,2,2)
+      sns.histplot(df, x = "Average", hue = "Hometown", multiple = "stack")
+      plt.title("Average Grade Distribution by Hometown")
+      
+   #### Track
+      plt.subplot(2,2,3)
+      sns.histplot(df, x = "Average", hue = "Track", multiple = "stack")
+      plt.title("Average Grade Distribution by Track")
+
+   #### Set the figure and show
+      plt.tight_layout()
+      plt.show()
 
 
 ## VERSION HISTORY
