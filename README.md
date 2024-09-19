@@ -32,7 +32,7 @@ constant as Mindanao and gender Female
 
 **SAMPLE TEST RUNS**
 
-## PROBLEM 1
+## PROBLEM 2
 
 **OBJECTIVES**
 - Create visualizations using MatplotLib and Seaborn to show how the different features in the dataset contribute to student's average grades.
@@ -52,8 +52,8 @@ constant as Mindanao and gender Female
 
 
 ## VERSION HISTORY
-**September 19, 2024** - Initial Upload (on-going)
+**September 19, 2024** - Initial Upload (on-going) 
 
-*{inclusion: raw jupyter nb code (w/o: markdowns YET), building readme file (w/: objectives and overview of the problems given; w/o: code proper and sample test runs yet)}* 
-
+- [as of 4:45 PM] = *uploaded raw jupyter nb code {***w/o*** markdowns yet, will be reuploaded}, building readme file {***w/*** objectives and overview of the problems given; ***w/o*** code proper and sample test runs yet}* 
+- [as of 10:03 AM] = *created 'Programming-Assignment-4' repository*
 
