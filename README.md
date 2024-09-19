@@ -175,7 +175,7 @@ By using data wrangling and data visualization techniques with storytelling, ana
 | 12   | S13   | Microelectronics  | 88   |     35      | 62.25   |
 | 16   | S17   | Microelectronics  | 81   |     79      | 70.50   |
 | 18   | S19   | Microelectronics  | 79   |     63      | 73.00   |
-| 20   | S21   | Instrumentation   | 83   |     51      | 68.50   |
+| 20   | S21   | Microelectronics  | 83   |     51      | 68.50   |
 | 22   | S23   | Instrumentation   | 84   |     70      | 68.75   |
 | 26   | S27   | Microelectronics  | 70   |     47      | 60.75   |
 | 28   | S29   | Instrumentation   | 73   |     48      | 63.50   |
