@@ -64,8 +64,7 @@ By using data wrangling and data visualization techniques with storytelling, ana
 
 **NOTES:**
 - Use a **vertical bar graph** to compare average grades across different categories (e.g., tracks, gender, hometowns).
-- Optionally, include additional visualizations like **boxplots** to show the distribution of data within each category or
-**histogram** to see the distribution of data within each category.
+- Optionally, include additional visualizations like **boxplots** or **histogram** to show the distribution of data within each category.
   
 **CODE PROPER:**
 
